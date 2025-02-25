@@ -25,12 +25,12 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - dockerfile: server/Dockerfile
-            image: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME_1 }}
-          - dockerfile: menu_updater/Dockerfile
-            image: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME_2 }}
-          - dockerfile: notifier/Dockerfile
-            image: ${{ env.REGISTRY }}/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME_3 }}
+          - dockerfile: ./server/Dockerfile
+            image: ghcr.io/prinako/ru-services/server
+          - dockerfile: ./menu_updater/Dockerfile
+            image: ghcr.io/prinako/ru-services/updater
+          - dockerfile: ./notifier/Dockerfile
+            image: ghcr.io/prinako/ru-services/notifier
     permissions:
       contents: read
       packages: write
