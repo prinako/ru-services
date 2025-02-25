@@ -9,7 +9,7 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy the source code files
-COPY ./ ./
+COPY ./notifier ./
 
 
 # Install the dependencies
